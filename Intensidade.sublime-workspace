@@ -3,10 +3,68 @@
 	{
 		"selected_items":
 		[
+			[
+				"valo",
+				"valor"
+			],
+			[
+				"ma",
+				"mat"
+			],
+			[
+				"fo",
+				"for\tFor Loop"
+			],
+			[
+				"qu",
+				"quebraMudanca"
+			],
+			[
+				"val",
+				"valor2"
+			],
+			[
+				"fil",
+				"filho1"
+			],
+			[
+				"ra",
+				"randInt"
+			],
+			[
+				"re",
+				"return"
+			]
 		]
 	},
 	"buffers":
 	[
+		{
+			"file": "modelo.py",
+			"settings":
+			{
+				"buffer_size": 2341,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "GA.cpp",
+			"settings":
+			{
+				"buffer_size": 2405,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "AlgoritmoGenetico.cpp",
+			"settings":
+			{
+				"buffer_size": 3139,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		}
 	],
 	"build_system": "",
 	"build_system_choices":
@@ -40,13 +98,14 @@
 	},
 	"file_history":
 	[
+		"/home/sidemar/Documentos/ProblemaIntensidade/Intensidade.sublime-workspace",
 		"/home/sidemar/Documentos/ProblemaIntensidade/modelo.py",
 		"/home/sidemar/Documentos/ProblemaIntensidade/GA.cpp",
 		"/home/sidemar/Documentos/ProblemaIntensidade/teste.in"
 	],
 	"find":
 	{
-		"height": 26.0
+		"height": 39.0
 	},
 	"find_in_files":
 	{
@@ -78,8 +137,95 @@
 	"groups":
 	[
 		{
+			"selected": 2,
 			"sheets":
 			[
+				{
+					"buffer": 0,
+					"file": "modelo.py",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 2341,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Python/Python.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 54.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "GA.cpp",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 2405,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								183,
+								1041
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/C++/C++.sublime-syntax",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "AlgoritmoGenetico.cpp",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 3139,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1040,
+								1040
+							]
+						],
+						"settings":
+						{
+							"auto_name": "",
+							"syntax": "Packages/C++/C++.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 162.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				}
 			]
 		}
 	],
@@ -160,7 +306,7 @@
 	"show_open_files": true,
 	"show_tabs": true,
 	"side_bar_visible": true,
-	"side_bar_width": 150.0,
+	"side_bar_width": 188.0,
 	"status_bar_visible": true,
 	"template_settings":
 	{

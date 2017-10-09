@@ -65,7 +65,7 @@ int main() {
 		}
 
 		exp2 /= MN;
-		model.addConstr(exp2 >= NUB*(1+fN), "c2");
+		model.addConstr(exp2 <= NUB*(1+fN), "c2");
 
 		GRBLinExpr exp3 = 0;
 
@@ -78,7 +78,7 @@ int main() {
 		}
 
 		exp3 /= MC;
-		model.addConstr(exp3 >= CUB*(1+fC), "c3");
+		model.addConstr(exp3 <= CUB*(1+fC), "c3");
 
 		model.setObjective(0.1*fT + 0.2*fN + 0.7*fC, GRB_MINIMIZE);
 
