@@ -4,8 +4,36 @@
 		"selected_items":
 		[
 			[
+				"o",
+				"opcao"
+			],
+			[
+				"fi",
+				"filho1"
+			],
+			[
+				"pu",
+				"push_back"
+			],
+			[
 				"valo",
-				"valor"
+				"valor1"
+			],
+			[
+				"end",
+				"endl"
+			],
+			[
+				"c",
+				"cout"
+			],
+			[
+				"edn",
+				"endl"
+			],
+			[
+				"ve",
+				"vet"
 			],
 			[
 				"ma",
@@ -44,6 +72,7 @@
 			"settings":
 			{
 				"buffer_size": 2341,
+				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
 		},
@@ -60,9 +89,37 @@
 			"file": "AlgoritmoGenetico.cpp",
 			"settings":
 			{
-				"buffer_size": 3139,
+				"buffer_size": 7163,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "teste.in",
+			"settings":
+			{
+				"buffer_size": 81,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "modeloInstancia.txt",
+			"settings":
+			{
+				"buffer_size": 36,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "teste2.in",
+			"settings":
+			{
+				"buffer_size": 75,
+				"encoding": "UTF-8",
+				"line_ending": "Unix",
+				"name": "3"
 			}
 		}
 	],
@@ -105,7 +162,7 @@
 	],
 	"find":
 	{
-		"height": 39.0
+		"height": 26.0
 	},
 	"find_in_files":
 	{
@@ -119,6 +176,7 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"calcularValorObjetivo",
 			"MT"
 		],
 		"highlight": true,
@@ -137,7 +195,7 @@
 	"groups":
 	[
 		{
-			"selected": 2,
+			"selected": 1,
 			"sheets":
 			[
 				{
@@ -153,8 +211,8 @@
 						"selection":
 						[
 							[
-								0,
-								0
+								1634,
+								1634
 							]
 						],
 						"settings":
@@ -162,7 +220,7 @@
 							"syntax": "Packages/Python/Python.sublime-syntax"
 						},
 						"translation.x": 0.0,
-						"translation.y": 54.0,
+						"translation.y": 378.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 1,
@@ -181,8 +239,8 @@
 						"selection":
 						[
 							[
-								183,
-								1041
+								314,
+								314
 							]
 						],
 						"settings":
@@ -191,10 +249,10 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 162.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 2,
+					"stack_index": 0,
 					"type": "text"
 				},
 				{
@@ -203,15 +261,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 3139,
+						"buffer_size": 7163,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1040,
-								1040
+								6225,
+								6225
 							]
 						],
 						"settings":
@@ -220,10 +278,96 @@
 							"syntax": "Packages/C++/C++.sublime-syntax"
 						},
 						"translation.x": 0.0,
-						"translation.y": 162.0,
+						"translation.y": 2887.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 0,
+					"stack_index": 2,
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "teste.in",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 81,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Text/Plain text.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 3,
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "modeloInstancia.txt",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 36,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								8,
+								6
+							]
+						],
+						"settings":
+						{
+							"auto_name": "",
+							"syntax": "Packages/Text/Plain text.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 5,
+					"type": "text"
+				},
+				{
+					"buffer": 5,
+					"file": "teste2.in",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 75,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1,
+								1
+							]
+						],
+						"settings":
+						{
+							"auto_name": "3",
+							"syntax": "Packages/Text/Plain text.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 4,
 					"type": "text"
 				}
 			]
