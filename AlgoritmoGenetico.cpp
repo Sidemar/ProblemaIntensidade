@@ -24,7 +24,7 @@ public:
 	
 };
 
-double calcularValorObjetivo(int solucao[], double **mat, int l, int c) {
+/*double calcularValorObjetivo(int solucao[], double **mat, int l, int c) {
 	double vet[c] = {0};
 	double valor;
 
@@ -48,7 +48,26 @@ double calcularValorObjetivo(int solucao[], double **mat, int l, int c) {
 	//cout << soma/l << endl;
 
 	return soma;
+}*/
+
+double calcularObjetivo(int solucao[], double **mat, int l, int c, int &prescricao) {
+	double valor;
+	double folga = 0.0;
+
+	for (int i = 0; i < l; ++i)
+	{
+		valor = 0.0;
+		for (int j = 0; j < c; ++j)
+		{
+			valor += mat[i][j] * solucao[j];
+		}
+
+		folga += prescricao - valor;		
+	}
+
+	return folga;
 }
+
 
 int randInt(int menor, int maior) {
 	srand(std::chrono::system_clock::now().time_since_epoch().count());
@@ -62,10 +81,20 @@ int randInt(int menor, int maior) {
     return distribution(generator);
 }*/
 
-bool dominancia(double obj1[], double obj2[]) {
+/*bool dominancia(double obj1[], double obj2[]) {
 	if((obj1[0] < obj2[0]) && (obj1[1] <= obj2[1]) && (obj1[2] <= obj2[2])
 		|| (obj1[0] <= obj2[0]) && (obj1[1] < obj2[1]) && (obj1[2] <= obj2[2])
 		|| (obj1[0] <= obj2[0]) && (obj1[1] <= obj2[1]) && (obj1[2] < obj2[2])) {
+		return true;
+	} else {
+		return false;
+	}
+}*/
+
+bool dominancia(double obj1[], double obj2[]) {
+	if((obj1[0] < obj2[0]) && (obj1[1] >= obj2[1]) && (obj1[2] >= obj2[2])
+		|| (obj1[0] <= obj2[0]) && (obj1[1] > obj2[1]) && (obj1[2] >= obj2[2])
+		|| (obj1[0] <= obj2[0]) && (obj1[1] >= obj2[1]) && (obj1[2] > obj2[2])) {
 		return true;
 	} else {
 		return false;
@@ -90,6 +119,57 @@ void filter(vector<Solucao> &populacao, Solucao so) {
     }
 
     populacao.push_back(so);
+}
+
+/*Solucao localsearch(Solucao &solucao, N, k) {
+	Solucao s;
+	Solucao best;
+
+	s.x = solucao.x;
+	s.valor = solucao.valor;
+
+	best.x = solucao.x;
+	best.valor = solucao.valor;
+
+	if(k == 1) {
+
+	}
+
+
+	return best;
+}*/
+
+void vns(Solucao &solucao, int &N) {
+	int k = 1;
+	int k_max = 1;
+	Solucao best(N);
+
+	for (int i = 0; i < N; ++i)
+	{
+		best.x[i] = solucao.x[i];
+	}
+
+	best.objetivos[0] = solucao.objetivos[0];
+	best.objetivos[1] = solucao.objetivos[1];
+	best.objetivos[2] = solucao.objetivos[2];
+
+	Solucao s1(N);
+
+	do {
+		// shake
+		//Solucao s1 = localsearch(solucao, N);
+		// localsearch
+		/*if(s1.valor < best.valor) {
+			solucao = s1;
+			solucao.valor = s1.valor;
+			best.valor = s1.valor;
+			k = 1;
+		} else {
+			k++;
+		}*/
+
+	} while(k <= k_max);
+
 }
 
 int main(int argc, char const *argv[])
@@ -167,9 +247,13 @@ int main(int argc, char const *argv[])
 			s1.x[j] = randInt(0, 200);
 		}
 
-		s1.objetivos[0] = (TLB - calcularValorObjetivo(s1.x, At, MT/N, N)/MT)/TLB;
+		/*s1.objetivos[0] = (TLB - calcularValorObjetivo(s1.x, At, MT/N, N)/MT)/TLB;
 		s1.objetivos[1] = (calcularValorObjetivo(s1.x, An, MN/N, N)/MN - NUB)/NUB;
-		s1.objetivos[2] = (calcularValorObjetivo(s1.x, Ac, MC/N, N)/MC - CUB)/CUB;
+		s1.objetivos[2] = (calcularValorObjetivo(s1.x, Ac, MC/N, N)/MC - CUB)/CUB;*/
+
+		s1.objetivos[0] = calcularObjetivo(s1.x, At, MT/N, N, TLB);
+		s1.objetivos[1] = calcularObjetivo(s1.x, At, MT/N, N, NUB);
+		s1.objetivos[2] = calcularObjetivo(s1.x, At, MT/N, N, CUB);
 
 		filter(populacao, s1);
 
@@ -178,7 +262,7 @@ int main(int argc, char const *argv[])
 	}
 
 	// Calcular as funcoes objetivos da populacao
-	//return 0;
+	// return 0;
 
 	cout << endl;
 	for (int i = 0; i < populacao.size(); ++i)
@@ -235,9 +319,13 @@ int main(int argc, char const *argv[])
 
 			cout << endl;*/
 
-			populacao[valor1].objetivos[0] = (TLB - calcularValorObjetivo(populacao[valor1].x, At, MT/N, N)/MT)/TLB;
-			populacao[valor1].objetivos[1] = (calcularValorObjetivo(populacao[valor1].x, An, MN/N, N)/MN - NUB)/NUB;
-			populacao[valor1].objetivos[2] = (calcularValorObjetivo(populacao[valor1].x, Ac, MC/N, N)/MC - CUB)/CUB;
+			//populacao[valor1].objetivos[0] = (TLB - calcularValorObjetivo(populacao[valor1].x, At, MT/N, N)/MT)/TLB;
+			//populacao[valor1].objetivos[1] = (calcularValorObjetivo(populacao[valor1].x, An, MN/N, N)/MN - NUB)/NUB;
+			//populacao[valor1].objetivos[2] = (calcularValorObjetivo(populacao[valor1].x, Ac, MC/N, N)/MC - CUB)/CUB;
+
+			populacao[valor1].objetivos[0] = calcularObjetivo(populacao[valor1].x, At, MT/N, N, TLB);
+			populacao[valor1].objetivos[1] = calcularObjetivo(populacao[valor1].x, At, MT/N, N, NUB);
+			populacao[valor1].objetivos[2] = calcularObjetivo(populacao[valor1].x, At, MT/N, N, CUB);
 
 
 		} else { // Recombinar
@@ -272,13 +360,21 @@ int main(int argc, char const *argv[])
 			//populacao.push_back(filho1);
 			//populacao.push_back(filho2);
 
-			filho1.objetivos[0] = (TLB - calcularValorObjetivo(filho1.x, At, MT/N, N)/MT)/TLB;
+			/*filho1.objetivos[0] = (TLB - calcularValorObjetivo(filho1.x, At, MT/N, N)/MT)/TLB;
 			filho1.objetivos[1] = (calcularValorObjetivo(filho1.x, An, MN/N, N)/MN - NUB)/NUB;
-			filho1.objetivos[2] = (calcularValorObjetivo(filho1.x, Ac, MC/N, N)/MC - CUB)/CUB;
+			filho1.objetivos[2] = (calcularValorObjetivo(filho1.x, Ac, MC/N, N)/MC - CUB)/CUB;*/
 
-			filho2.objetivos[0] = (TLB - calcularValorObjetivo(filho2.x, At, MT/N, N)/MT)/TLB;
+			filho1.objetivos[0] = calcularObjetivo(filho1.x, At, MT/N, N, TLB);
+			filho1.objetivos[1] = calcularObjetivo(filho1.x, At, MT/N, N, NUB);
+			filho1.objetivos[2] = calcularObjetivo(filho1.x, At, MT/N, N, CUB);
+
+			/*filho2.objetivos[0] = (TLB - calcularValorObjetivo(filho2.x, At, MT/N, N)/MT)/TLB;
 			filho2.objetivos[1] = (calcularValorObjetivo(filho2.x, An, MN/N, N)/MN - NUB)/NUB;
-			filho2.objetivos[2] = (calcularValorObjetivo(filho2.x, Ac, MC/N, N)/MC - CUB)/CUB;
+			filho2.objetivos[2] = (calcularValorObjetivo(filho2.x, Ac, MC/N, N)/MC - CUB)/CUB;*/
+
+			filho2.objetivos[0] = calcularObjetivo(filho2.x, At, MT/N, N, TLB);
+			filho2.objetivos[1] = calcularObjetivo(filho2.x, At, MT/N, N, NUB);
+			filho2.objetivos[2] = calcularObjetivo(filho2.x, At, MT/N, N, CUB);
 
 			//cout << endl << "= (" << filho1.objetivos[0] << ", " << filho1.objetivos[1] <<", " << filho1.objetivos[2] << ")" << endl;
 
